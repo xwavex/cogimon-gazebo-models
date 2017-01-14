@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+<robot name="kuka-omnirob" xmlns:xacro="http://ros.org/wiki/xacro">
+    <!--static>true</static-->
+    <link name="chassis">
+        <!--inertial>
+            <mass value="1.2" />
+            <origin rpy="0 0 0" xyz="0 0 0.055" />
+            <inertia ixx="0.00229" ixy="0" ixz="0" iyy="0.00216" iyz="0" izz="0.00229" />
+        </inertial-->
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <!--mesh filename="model://kuka-omnirob/meshes/omnirobBase.dae" scale="1 1 1" /-->
+                <box>
+                  <size>.4 .2 .1</size>
+                </box>
+            </geometry>
+            <!--material name="Orange" /-->
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <!--mesh filename="model://kuka-omnirob/meshes/omnirobBase.dae" scale="1 1 1" /-->
+                <box>
+                  <size>.4 .2 .1</size>
+                </box>
+            </geometry>
+        </collision>
+    </link>
+    <!--gazebo reference="lwr_arm_base_link">
+    </gazebo-->
+    <!--joint name="lwr_arm_0_joint" type="revolute">
+        <origin rpy="0 0 0" xyz="0 0 0.11" />
+        <axis xyz="0 0 1" />
+        <limit effort="204" lower="-2.96705972839" upper="2.96705972839" velocity="1.91986217719" />
+        <safety_controller k_position="100" k_velocity="2" soft_lower_limit="-2.93215314335" soft_upper_limit="2.93215314335" />
+        <dynamics damping="5.0" />
+        <parent link="lwr_arm_base_link" />
+        <child link="lwr_arm_1_link" />
+    </joint>
+    <gazebo reference="lwr_arm_0_joint">
+        <provideFeedback>1</provideFeedback>
+        <implicitSpringDamper>1</implicitSpringDamper>
+    </gazebo>
+    <transmission name="lwr_arm_0_trans" type="SimpleTransmission">
+        <actuator name="lwr_arm_0_motor" />
+        <joint name="lwr_arm_0_joint" />
+        <mechanicalReduction>1.0</mechanicalReduction>
+    </transmission-->
+   
+    <origin xyz="0 0 0" rpy="0 0 0" />
+</robot>
